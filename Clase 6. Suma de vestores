@@ -1,0 +1,408 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled1.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyN6y0UhKc2049JXEezLU+2A",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/mybuasi/proyectoDemoCursoPrework/blob/main/Clase%206.%20Suma%20de%20vestores\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "SnmSqSw-QywX"
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "E8ux6l1gQzd0"
+      },
+      "source": [
+        "Ejercicios clase 6 ALGEBRA DE VECTORES"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "K0hFwDH_Q4II",
+        "outputId": "4ef165a2-5430-42d3-b6a6-4b8f1d28f7c6"
+      },
+      "source": [
+        "rojo = [255,0,0]\n",
+        "negro = [0,0,0]\n",
+        "print('rojo+negro resulta en:', rojo+negro)    #concatena\n"
+      ],
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "rojo+negro resulta en: [255, 0, 0, 0, 0, 0]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "5_vtaSJCRLij"
+      },
+      "source": [
+        "def suma_vectores(a,b):   #crea función\n",
+        "  return[i+j for i,j in zip(a,b)]\n",
+        "\n",
+        "  print('suma_vectores(rojo,negro) nos devuelve:', suma_vectores(rojo,negro))"
+      ],
+      "execution_count": 8,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8cqtARkTR2aC",
+        "outputId": "68680290-8a05-4fc0-dd39-172638d5b3d0"
+      },
+      "source": [
+        "suma_vectores(rojo,negro)"
+      ],
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[255, 0, 0]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 10
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ij3sf8KPSPiX"
+      },
+      "source": [
+        "import numpy as np\n"
+      ],
+      "execution_count": 15,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "yFKbF0uuSvBz"
+      },
+      "source": [
+        "rojo = np.array(rojo)   #declaramos nuestas listas creadas como numpy arrays\n",
+        "negro = np.array(negro)"
+      ],
+      "execution_count": 23,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "up8TfPC0S7xL",
+        "outputId": "7583dc26-66b9-4b7d-cf44-92bea3f450df"
+      },
+      "source": [
+        "print(type(rojo))"
+      ],
+      "execution_count": 24,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "<class 'numpy.ndarray'>\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MQCuWFtfTAZA",
+        "outputId": "b06608a4-e28d-4bcf-9eea-5060ca324756"
+      },
+      "source": [
+        "print(type(negro))"
+      ],
+      "execution_count": 25,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "<class 'numpy.ndarray'>\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xI3H5bD-TVjJ",
+        "outputId": "9ec253a1-8c25-48e3-d88a-5c3bb13db418"
+      },
+      "source": [
+        "print('La suma de los numpy array rojo+negro es', rojo+negro)  #como ya son numpy array se espera que el signo + funcione como lo conocemos aritméticamente"
+      ],
+      "execution_count": 26,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "La suma de los numpy array rojo+negro es [255   0   0]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "U16NIwv6UEpx",
+        "outputId": "212b00a3-4c0a-4974-a8e1-e1bebbcaa75d"
+      },
+      "source": [
+        "a=(1,2,3,4,5)\n",
+        "b=(-1,-2,-3,-4,5)\n",
+        "c=(a+b)\n",
+        "print (c)"
+      ],
+      "execution_count": 28,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "(1, 2, 3, 4, 5, -1, -2, -3, -4, 5)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "C1UnaF4mUYl7",
+        "outputId": "2270041b-9d70-48d2-ba76-8c865a483fe5"
+      },
+      "source": [
+        "a=np.array([1,2,3,4,5])    #ahora los declaramos cono arreglos de numpy\n",
+        "b=np.array([-1,-2,-3,-4,5])\n",
+        "c=(a+b)\n",
+        "print (c)"
+      ],
+      "execution_count": 29,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[ 0  0  0  0 10]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "c5Rh5M5ZUuWE",
+        "outputId": "0e63b256-f9cc-4ad8-c13e-8292b2e015d9"
+      },
+      "source": [
+        "a=np.array([1,2,3,4,5])    #ahora los declaramos como arreglos de numpy\n",
+        "b=np.array([-1,-2,-3,-4,5])\n",
+        "c=(a+b)\n",
+        "print ('La suma de los vectores a y b es =', c)"
+      ],
+      "execution_count": 31,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "La suma de los vectores a y b es = [ 0  0  0  0 10]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "csHqYh6CW3OZ"
+      },
+      "source": [
+        "**RETO TAREA**"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "64BHql9hVBWR"
+      },
+      "source": [
+        "verde=[0,255,0]\n",
+        "a=[0,0,255]"
+      ],
+      "execution_count": 37,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "MKU8CLkRV4Xd"
+      },
+      "source": [
+        "verde=np.array([0,255,0])\n",
+        "a=np.array([0,0,255])"
+      ],
+      "execution_count": 42,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "A6Amaw5AWX2Y",
+        "outputId": "9aaa0dd4-2661-4132-fa6a-8633f51fc35c"
+      },
+      "source": [
+        "rojo+verde+a"
+      ],
+      "execution_count": 43,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([255, 255, 255])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 43
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "F4ODAhz-WpfB",
+        "outputId": "40f60fa6-75b8-4173-f826-550e0ffe2bc2"
+      },
+      "source": [
+        "rojo+verde"
+      ],
+      "execution_count": 44,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([255, 255,   0])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 44
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Ga4WzqTZWwiv",
+        "outputId": "c75f123b-d82b-4da7-e371-19eea9e9a8f8"
+      },
+      "source": [
+        "negro - a"
+      ],
+      "execution_count": 45,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([   0,    0, -255])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 45
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "tnUVwkBJW6vA"
+      },
+      "source": [
+        "1. rojo + verde + a, el arreglo que resulta es el color blanco en RGB\n",
+        "2. rojo + verde, resulta en amarillo\n",
+        "3. negro - a, da un vector con un número negativo que no tiene sentido en RGB, ya que está definido solo para números positivos."
+      ]
+    }
+  ]
+}
